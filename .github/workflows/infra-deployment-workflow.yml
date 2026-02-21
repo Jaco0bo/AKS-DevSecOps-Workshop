@@ -43,7 +43,8 @@ jobs:
       # az feature register for Lab 1
     - name: az feature register
       run: |
-        az feature register --namespace "Microsoft.ContainerService" --name "EnableWorkloadIdentityPreview"
+        CLUSTER_NAME=$(az aks list --resource-group "$CLUSTER_RESOURCE_GROUP" --query "[0].name" -o tsv)
+        az aks update --resource-group "$CLUSTER_RESOURCE_GROUP" --name "$CLUSTER_NAME" --enable-oidc-issuer --enable-workload-identity
 
       # Attach ACR to AKS
     - name: attach Azure Container Registry to AKS
