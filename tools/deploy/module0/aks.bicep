@@ -1,4 +1,4 @@
-// mandatory params
+﻿// mandatory params
 @description('The unique DNS prefix for your cluster, such as myakscluster. This cannot be updated once the Managed Cluster has been created.')
 param dnsPrefix string = resourceGroup().name // name is obtained from env
 
@@ -36,7 +36,7 @@ resource acr 'Microsoft.ContainerRegistry/registries@2023-01-01-preview' = {
   }
 }
 
-resource aks 'Microsoft.ContainerService/managedClusters@2022-09-02-preview' = {
+resource aks 'Microsoft.ContainerService/managedClusters@2023-09-02-preview' = {
   name: clusterName
   location: location
   identity: {
@@ -87,3 +87,4 @@ resource akv 'Microsoft.KeyVault/vaults@2022-07-01' = {
 }
 
 output controlPlaneFQDN string = aks.properties.fqdn
+
