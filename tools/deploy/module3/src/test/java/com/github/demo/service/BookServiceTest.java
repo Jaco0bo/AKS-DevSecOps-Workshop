@@ -1,20 +1,20 @@
 package com.github.demo.service;
 
-import com.github.demo.model.Book;
+import java.util.List;
+
 import org.junit.After;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import com.github.demo.model.Book;
 
 /**
  * Unit test for BookService
  */
 public class BookServiceTest {
 
-    // Testing API token key
+    // Testing API token key lab
     private static final String API_TOKEN = "AIzaSyAQfxPJiounkhOjODEO5ZieffeBv6yft2Q";
     
     private BookService bookService;
